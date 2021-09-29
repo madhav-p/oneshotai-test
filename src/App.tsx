@@ -1,21 +1,20 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.css";
-import RootLayout from "./layouts/Root";
-import routes from "./routes";
+
+import { AuthProvider } from "./contexts/auth";
+import Router from "./contexts/Router";
 
 function App() {
   return (
     <ChakraProvider>
-      <Router>
-        <RootLayout>
+      <AuthProvider>
+        <BrowserRouter>
           <Switch>
-            {routes.map((r) => (
-              <Route {...r}></Route>
-            ))}
+            <Router></Router>
           </Switch>
-        </RootLayout>
-      </Router>
+        </BrowserRouter>
+      </AuthProvider>
     </ChakraProvider>
   );
 }

@@ -2,6 +2,7 @@ import { Icon } from "@chakra-ui/react";
 import { Flex, Link } from "@chakra-ui/react";
 import { ReactText } from "react";
 import { IconType } from "react-icons";
+import { NavLink } from "react-router-dom";
 // export type IconType = () => React.ReactElement;
 
 export type NavItemProps = {
@@ -12,7 +13,7 @@ export type NavItemProps = {
 
 const NavItem: React.FC<NavItemProps> = ({ icon, children, to }) => {
   return (
-    <Link href={to} style={{ textDecoration: "none" }}>
+    <NavLink to={to} style={{ textDecoration: "none" }}>
       <Flex
         align="center"
         p="4"
@@ -48,7 +49,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, children, to }) => {
           {children}
         </span>
       </Flex>
-    </Link>
+    </NavLink>
   );
 };
 

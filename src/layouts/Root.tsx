@@ -56,7 +56,7 @@ const RootLayout: React.FC<{}> = ({ children }) => {
               <Text fontSize="3xl">LOGO</Text>
             </Flex>
           </Box>
-          <Box bg="#eee" as="main" minHeight="100vh">
+          <Box bg="#eee" as="main" h="100vh" overflowY="scroll">
             {children}
           </Box>
         </Box>
